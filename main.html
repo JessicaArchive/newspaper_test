@@ -1,0 +1,530 @@
+<html><head>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <title>AI news letter</title>
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:image" content="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free/codingday/steampunk.png">
+    <meta property="og:title" content="AI news letter">
+    <meta property="og:description" content="news letter">
+    <style>
+        body {
+            font-family: 'Droid Serif', serif;
+            font-size: 14px;
+            color: #2f2f2f;
+            background-color: #f9f7f1;
+            background-image: url("https://img.freepik.com/premium-photo/vintage-paper-texture_422666-1062.jpg?w=2000");
+            filter: sepia(1);
+        }
+
+        header {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 80px;
+            text-transform: uppercase;
+            display: inline-block;
+            line-height: 72px;
+            margin-bottom: 20px;
+
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .head {
+            text-align: center;
+            position: relative;
+
+
+        }
+
+        .headerobjectswrapper {}
+
+        .subhead {
+            text-transform: uppercase;
+            border-bottom: 2px solid #2f2f2f;
+            border-top: 2px solid #2f2f2f;
+            padding: 12px 0 12px 0;
+
+        }
+
+        .weatherforcastbox {
+            position: relative;
+            width: 12%;
+            left: 10px;
+            border: 3px double #2f2f2f;
+            padding: 10px 15px 10px 15px;
+            line-height: 20px;
+            display: inline-block;
+            margin: 0 50px 20px -360px;
+        }
+
+        .content {
+            font-size: 0;
+            line-height: 0;
+            word-spacing: -.31em;
+            display: inline-block;
+            margin: 30px 2% 0 2%;
+
+
+        }
+
+        .collumn {
+            font-size: 14px;
+            line-height: 20px;
+            width: 27%;
+            display: inline-block;
+            padding: 0 1% 0 1%;
+            vertical-align: top;
+            margin-bottom: 50px;
+            transition: all .7s;
+        }
+
+        .collumns {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .collumn+.collumn {
+            border-left: 1px solid #2f2f2f;
+        }
+
+        .collumn .headline {
+            text-align: center;
+            line-height: normal;
+            font-family: 'Playfair Display', serif;
+            display: block;
+            margin: 0 auto;
+
+
+        }
+
+        .collumn .headline.hl1 {
+            font-weight: 700;
+            font-size: 30px;
+            text-transform: uppercase;
+            padding: 10px 0 10px 0;
+
+        }
+
+        .collumn .headline.hl2 {
+            font-weight: 400;
+            font-style: italic;
+            font-size: 24px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl2:before {
+            border-top: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 7px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .headline.hl2:after {
+            border-bottom: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 13px;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .collumn .headline.hl3 {
+            font-weight: 400;
+            font-style: italic;
+            font-size: 36px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl4 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl4:before {
+            border-top: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 7px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .headline.hl4:after {
+            border-bottom: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 10px;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .collumn .headline.hl5 {
+            font-weight: 400;
+            font-size: 42px;
+            text-transform: uppercase;
+            font-style: italic;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl6 {
+            font-weight: 400;
+            font-size: 18px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl6:before {
+            border-top: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 7px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .headline.hl6:after {
+            border-bottom: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 10px;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .collumn .headline.hl7 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            display: block;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl8 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl9 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .headline.hl10 {
+            font-weight: 700;
+            font-size: 12px;
+            box-sizing: border-box;
+            padding: 10px 0 10px 0;
+        }
+
+        .collumn .citation {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            line-height: 44px;
+            /*font-style: italic;*/
+            text-align: center;
+            font-weight: 400;
+            display: block;
+            margin: 40px 0 40px 0;
+            font-feature-settings: "liga", "dlig";
+
+        }
+
+        .collumn .citation:before {
+            border-top: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .citation:after {
+            border-bottom: 1px solid #2f2f2f;
+            content: '';
+            width: 100px;
+            height: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .collumn .figure {
+            margin: 0 0 20px;
+        }
+
+        .collumn .figcaption {
+            font-style: italic;
+            font-size: 12px;
+        }
+
+        .media {
+            -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+            filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+            mix-blend-mode: multiply;
+            width: 100%;
+        }
+
+        /*________________________________________________________________________________________________________________________________*/
+        /*MEDIAQUERIES*/
+        @media only all and (max-width: 1300px) {
+            .weatherforcastbox {
+                display: none;
+            }
+
+        }
+
+        @media only all and (max-width: 1200px) {
+            .collumn {
+                width: 31%;
+            }
+
+        }
+
+        @media only all and (max-width: 900px) {
+            .collumn {
+                width: 47%;
+            }
+
+        }
+
+        @media only all and (max-width: 600px) {
+            .collumns {
+                display: block;
+            }
+
+            .collumn {
+                width: 100%;
+            }
+
+            .collumn+.collumn {
+                border-left: none;
+                border-bottom: 1px solid #2f2f2f;
+            }
+
+            header {
+                max-width: 320px;
+                font-size: 60px;
+                line-height: 54px;
+                overflow: hidden;
+            }
+            .headline {
+                font-size: 20px;
+            }
+
+        }
+
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        figure video {
+            height: 25rem;
+            filter: grayscale(100%);
+            object-fit: cover;
+        }
+
+        .main-col {
+            width: 40%;
+        }
+        .sub-col {
+            width: 15%;
+        }
+        video {
+            width: 33rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="headerobjectswrapper">
+            <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours:
+                    Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; </span></div>
+            <header>DREAM POST</header>
+        </div>
+
+        <div class="subhead">ICON, Teheran-ro - Thursday August 05, 2033 - Seven Pages</div>
+    </div>
+    <div class="content">
+        <div class="collumns">
+            <div class="collumn sub-col">
+                <div class="head"><span class="headline hl1">Elon Musk: Turning Space Dreams into Reality</span>
+                    <p><span class="headline hl4">I think there is a general question of truth.</span></p>
+                </div>
+                Tesla, SpaceX, Neuralink, SolarCity - The Vanguard of Innovation in Elon Musk's Saga A disruptor of the highest order, Elon Musk's life story is brimming with unyielding passion and audacious ventures in the realms of space, automobiles, artificial intelligence, and energy. His narrative plays a pivotal role in reshaping the future of humanity.
+                <figure class="figure">
+                    <img class="media" src="source/jannes-glas-87royqk4t6o-unsplash.jpg" alt="">
+                </figure>
+                <p>First Step: The Birth of Tesla
+                    Elon Musk's inaugural innovation was the electric car manufacturer, Tesla. His vision was to create electric cars as a sustainable energy source for the future. Tesla revolutionized the electric car industry, realizing a vision that blended environmental conservation with the future of transportation</p>
+            </div>
+            <div class="collumn main-col">
+                <div class="head"><span class="headline hl1">First Step: The Birth of Tesla
+                    </span>
+                    <p><span class="headline hl2">Let go your conscious self and act on instinct</span></p>
+                </div>Elon Musk's inaugural innovation was the electric car manufacturer, Tesla. His vision was to create electric cars as a sustainable energy source for the future. Tesla revolutionized the electric car industry, realizing a vision that blended environmental conservation with the future of transportation</p>
+
+                <figure class="figure">
+                    <video src="/source/untitled video.mp4" controls="" loop="" muted="" autoplay=""></video>
+                    <figcaption class="figcaption">"This time, let go your conscious self and act on instinct."
+                    </figcaption>
+                </figure>
+                <p>Secondly, Elon Musk founded SpaceX to expand the frontiers of space exploration. His vision encompassed human colonization of Mars and the development of space. SpaceX achieved economic viability in space travel by pioneering reusable rocket technology, solidifying its position as a trailblazer in spaceflight.</p>
+            <span class="citation">"Clean Energy Revolution: SolarCity and Energy Storage."</span>
+            Elon Musk is also leading innovation in the clean energy sector. SolarCity is revolutionizing the energy market by making solar energy cheaper and more efficient. His energy storage projects improve energy supply stability and promote broader usage of renewable energy.
+
+            </div>
+            <div class="collumn sub-col">
+                <div class="head"><span class="headline hl1">Mind and Technology</span>
+                    <p><span class="headline hl6">Neuralink and Artificial Intelligence</span></p>
+                </div>
+                <p>Elon Musk's subsequent challenge was Neuralink and Artificial Intelligence (AI). Through Neuralink, he aimed to develop brain-machine interface technology for treating brain disorders and enhancing brain function. Additionally, he established OpenAI to address ethical concerns and provide ethical guidelines for AI development.</p>
+
+                <figure class="figure">
+                    <img class="media" src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free/codingday/nomad.png" alt="">
+                </figure>
+Elon Musk's story is brimming with innovation, daring, and an insatiable thirst for realizing dreams and ambitions. His accomplishments shine as a beacon of hope for humanity's future.
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+
+        function saveOriginalText(node, storage) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                storage.push({
+                    node: node,
+                    text: node.textContent
+                });
+            } else {
+                for (let i = 0; i < node.childNodes.length; i++) {
+                    saveOriginalText(node.childNodes[i], storage);
+                }
+            }
+        }
+        let originalTexts = [];
+        saveOriginalText(document.body, originalTexts);
+
+        // 0과 1로 글짜를 바꾸는 함수
+        function randomizeText(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                node.textContent = node.textContent.replace(/\S/g, () => Math.round(Math.random()).toString());
+            } else {
+                for (let i = 0; i < node.childNodes.length; i++) {
+                    randomizeText(node.childNodes[i]);
+                }
+            }
+        }
+
+        // 애니메이션 효과 연출을 위한 반복 함수
+        function animateMatrixEffect() {
+            randomizeText(document.body);
+        }
+
+
+
+        // 원래의 텍스트로 점진적으로 복원하는 함수
+        function restoreText() {
+            originalTexts.forEach(item => {
+                let currentText = item.node.textContent;
+                let originalText = item.text;
+
+                if (currentText !== originalText) {
+                    let positions = [];
+
+                    // 0 또는 1 위치를 파악
+                    for (let i = 0; i < currentText.length; i++) {
+                        if (currentText[i] === '0' || currentText[i] === '1') {
+                            positions.push(i);
+                        }
+                    }
+
+                    // 랜덤 위치의 '0' 또는 '1' 문자를 원래 문자로 바꾸기
+                    if (positions.length > 0) {
+                        let randomPosition = positions[Math.floor(Math.random() * positions.length)];
+                        let newText = currentText.split('');
+                        newText[randomPosition] = originalText[randomPosition];
+                        item.node.textContent = newText.join('');
+                    }
+                }
+            });
+        }
+
+
+
+        // 5초동안 애니메이션 적용 함수
+        let animationInterval;
+
+        function startAnimation() {
+            animationInterval = setInterval(animateMatrixEffect, 50);
+            setTimeout(() => {
+                clearInterval(animationInterval);
+                // 원래의 텍스트로 점진적으로 복원
+                animationInterval = setInterval(() => {
+                    restoreText();
+                    // 모든 텍스트가 원래대로 복원되면 애니메이션 중지
+                    if (originalTexts.every(item => item.node.textContent === item.text)) {
+                        clearInterval(animationInterval);
+                    }
+                }, 15);
+            }, 500);
+        }
+
+        startAnimation();
+
+
+
+
+    </script>
+
+
+
+<div class="papagoExt-icon" style="display: none;"><div style="background-image: url(&quot;chrome-extension://kjlcghnjglnjdagnpdhphkbljflodhda/icons/19.png&quot;); height: 19px; width: 19px;"></div></div><div class="papagoExt-inline light" style="font-family: Tahoma, Tahoma, Geneva, sans-serif; display: none;">
+  <div class="papagoExt-flex-column" id="papagoExt-blur">
+    <div class="papagoExt-flex papago-draggable">
+      <select name="papagoExt-target" class="papagoExt-bordered" id="papagoExt-language-target">
+        <option id="papagoExt-en" value="en">11</option>
+        <option id="papagoExt-ko" value="ko">000</option>
+        <option id="papagoExt-ja" value="ja">110</option>
+        <option id="papagoExt-zh-CN" value="zh-CN">110 1010</option>
+        <option id="papagoExt-zh-TW" value="zh-TW">101 1111</option>
+        <option id="papagoExt-vi" value="vi">1110</option>
+        <option id="papagoExt-id" value="id">000011</option>
+        <option id="papagoExt-th" value="th">001</option>
+        <option id="papagoExt-de" value="de">011</option>
+        <option id="papagoExt-ru" value="ru">1101</option>
+        <option id="papagoExt-es" value="es">0110</option>
+        <option id="papagoExt-it" value="it">10100</option>
+        <option id="papagoExt-fr" value="fr">0010</option>
+      </select>
+      <div class="papagoExt-bordered" id="papagoExt-copy-button">1001</div>
+    </div>
+    <div class="papagoExt-bordered" id="papagoExt-result-text"></div>
+    <div class="papagoExt-flex" id="papagoExt-links">
+      <span onclick="window.open('https://www.patreon.com/translating_with_papago', '_blank')" id="papagoExt-donate">0 101 11001</span>
+    </div>
+  </div>
+  <div id="papagoExt-loader">
+    <div id="papagoExt-loading-animation"></div>
+  </div>
+</div></body></html>
